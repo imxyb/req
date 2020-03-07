@@ -10,12 +10,14 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"os"
 	"strings"
 	"time"
 )
 
 // Debug enable debug mode if set to true
 var Debug bool
+var DebugOutput io.Writer = os.Stdout
 
 // dumpConn is a net.Conn which writes to Writer and reads from Reader
 type dumpConn struct {

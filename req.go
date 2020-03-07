@@ -342,7 +342,7 @@ func (r *Req) Do(method, rawurl string, vs ...interface{}) (resp *Resp, err erro
 
 	// output detail if Debug is enabled
 	if Debug {
-		fmt.Println(resp.Dump())
+		DebugOutput.Write([]byte(resp.Dump()))
 	}
 	return
 }
